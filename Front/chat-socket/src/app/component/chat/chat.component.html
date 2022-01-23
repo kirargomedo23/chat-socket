@@ -1,0 +1,16 @@
+<div class="chatContainer">
+    <p class="local" [ngClass]=" {'local': message.messageType == 1, 'remoto': message.messageType == 2} "
+        *ngFor="let message of chatService.chats"  > {{message.text}}  </p>
+</div>
+
+
+<div class="inputContainer">
+    <form  (submit)="sendMessage()" >
+        <input [(ngModel)]="text" [ngModelOptions]=" {standalone:true} "
+            type="text" name="i" id="i">
+    </form>
+</div>
+
+
+
+
